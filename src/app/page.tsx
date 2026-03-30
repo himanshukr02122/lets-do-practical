@@ -1,8 +1,29 @@
+"use client"
+
+import { useCallback, useState } from "react";
 import BlogFeed from "./components/blogs/BlogFeed";
 import FilterSidebar from "./components/blogs/filters/FilterSidebar";
 import RightSidebar from "./components/blogs/sidebar/RightSidebar";
 
 export default function Home() {
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  const toggleTag = useCallback((tag: string) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag)
+        ? prev.filter((t) => t !== tag)
+        : [...prev, tag]
+    );
+  }, []);
+
+  // const toggleTag = (tag: string) => {
+  //   setSelectedTags((prev) =>
+  //     prev.includes(tag)
+  //       ? prev.filter((t) => t !== tag)
+  //       : [...prev, tag]
+  //   );
+  // };
+
   return (
     <section
       className="w-full max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-4"
@@ -12,7 +33,10 @@ export default function Home() {
 
         {/* Filters (top on mobile) */}
         <div className="lg:hidden">
-          <FilterSidebar />
+          <FilterSidebar
+            selectedTags={selectedTags}
+            toggleTag={toggleTag}
+          />
         </div>
 
         {/* Main Grid */}
@@ -20,17 +44,23 @@ export default function Home() {
 
           {/* Left Sidebar */}
           <div className="hidden lg:block lg:col-span-3">
-            <FilterSidebar />
+            <FilterSidebar
+              selectedTags={selectedTags}
+              toggleTag={toggleTag}
+            />
           </div>
 
           {/* Blog Feed */}
           <div className="lg:col-span-6">
-            <BlogFeed />
+            <BlogFeed selectedTags={selectedTags} />
           </div>
 
           {/* Right Sidebar */}
           <div className="hidden lg:block lg:col-span-3">
-            <RightSidebar />
+            <RightSidebar 
+              // selectedTags={selectedTags}
+              toggleTag={toggleTag}
+            />
           </div>
         </div>
       </div>

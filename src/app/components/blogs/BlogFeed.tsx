@@ -3,14 +3,23 @@ import { Blog } from "@/app/types/blog";
 import BlogCard from "./BlogCard";
 import AdCard from "./ads/AdCard";
 
-export default function BlogFeed() {
+export default function BlogFeed({
+  selectedTags,
+}: {
+  selectedTags: string[];
+}) {
+  const filteredBlogs =
+    selectedTags.length === 0
+      ? blogs
+      : blogs.filter((blog: Blog) =>
+          selectedTags.some((tag) => blog.tags.includes(tag))
+        );
+
   return (
     <div className="space-y-4">
-      {blogs.map((blog: Blog, index: number) => (
+      {filteredBlogs.map((blog: Blog, index: number) => (
         <div key={blog.id}>
           <BlogCard blog={blog} />
-
-          {/* In-feed Ad */}
           {(index + 1) % 4 === 0 && <AdCard type="banner" />}
         </div>
       ))}

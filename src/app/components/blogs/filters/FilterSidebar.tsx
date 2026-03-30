@@ -1,19 +1,38 @@
-export default function FilterSidebar() {
+export default function FilterSidebar({
+  selectedTags,
+  toggleTag,
+}: {
+  selectedTags: string[];
+  toggleTag: (tag: string) => void;
+}) {
+  const allTags = ["react", "javascript", "frontend", "css"];
+
   return (
     <div className="bg-white rounded-xl p-4 shadow-sm sticky top-16">
       <h2 className="font-semibold mb-3">Filters</h2>
 
       <div className="mb-4">
         <p className="text-sm font-medium mb-2">Tags</p>
+
         <div className="flex flex-wrap gap-2">
-          {["react", "js", "css"].map((tag) => (
-            <span
-              key={tag}
-              className="px-2 py-1 bg-gray-100 rounded text-xs"
-            >
-              #{tag}
-            </span>
-          ))}
+          {allTags.map((tag) => {
+            const isActive = selectedTags.includes(tag);
+
+            return (
+              <button
+                key={tag}
+                onClick={() => toggleTag(tag)}
+                className={`px-2 py-1 rounded text-xs border transition
+                  ${
+                    isActive
+                      ? "bg-blue-600 text-white border-blue-600"
+                      : "bg-gray-100 text-gray-700"
+                  }`}
+              >
+                #{tag}
+              </button>
+            );
+          })}
         </div>
       </div>
 
