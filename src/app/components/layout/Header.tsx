@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <nav
-      className="p-4"
+      className="p-4 fixed top-0 bg-white w-full z-10"
     >
         <div
           className="flex gap-2.5"

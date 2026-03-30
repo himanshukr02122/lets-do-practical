@@ -1,0 +1,30 @@
+export default function FilterSidebar() {
+  return (
+    <div className="bg-white rounded-xl p-4 shadow-sm sticky top-16">
+      <h2 className="font-semibold mb-3">Filters</h2>
+
+      <div className="mb-4">
+        <p className="text-sm font-medium mb-2">Tags</p>
+        <div className="flex flex-wrap gap-2">
+          {["react", "js", "css"].map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-1 bg-gray-100 rounded text-xs"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p className="text-sm font-medium mb-2">Stats</p>
+        <ul className="text-xs text-gray-600 space-y-1">
+          <li>Blogs read: 12</li>
+          <li>Saved blogs: 5</li>
+          <li>Top rated: 8</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
