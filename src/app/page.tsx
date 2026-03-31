@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import BlogFeed from "./components/blogs/BlogFeed";
 import FilterSidebar from "./components/blogs/filters/FilterSidebar";
 import RightSidebar from "./components/blogs/sidebar/RightSidebar";
@@ -8,21 +8,13 @@ import RightSidebar from "./components/blogs/sidebar/RightSidebar";
 export default function Home() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
-  const toggleTag = useCallback((tag: string) => {
+  const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
       prev.includes(tag)
         ? prev.filter((t) => t !== tag)
         : [...prev, tag]
     );
-  }, []);
-
-  // const toggleTag = (tag: string) => {
-  //   setSelectedTags((prev) =>
-  //     prev.includes(tag)
-  //       ? prev.filter((t) => t !== tag)
-  //       : [...prev, tag]
-  //   );
-  // };
+  };
 
   return (
     <section
@@ -57,10 +49,7 @@ export default function Home() {
 
           {/* Right Sidebar */}
           <div className="hidden lg:block lg:col-span-3">
-            <RightSidebar 
-              // selectedTags={selectedTags}
-              toggleTag={toggleTag}
-            />
+            <RightSidebar />
           </div>
         </div>
       </div>

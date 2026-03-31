@@ -1,12 +1,6 @@
-import { memo } from "react";
 import AdCard from "../ads/AdCard";
 
-const RightSidebar = memo(function RightSidebar({
-  toggleTag,
-}: {
-  toggleTag: (tag: string) => void;
-}) {
-  console.log("This is right sidebar section!!");
+const RightSidebar = () => {
   
   return (
     <div className="space-y-4 sticky top-16">
@@ -38,6 +32,6 @@ const RightSidebar = memo(function RightSidebar({
       </div>
     </div>
   );
-})
+}
 
 export default RightSidebar;
