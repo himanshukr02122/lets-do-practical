@@ -1,15 +1,16 @@
 "use client"
 
-import { useState } from "react";
+import { useContext } from "react";
 import BlogFeed from "./components/blogs/BlogFeed";
 import FilterSidebar from "./components/blogs/filters/FilterSidebar";
 import RightSidebar from "./components/blogs/sidebar/RightSidebar";
+import { BlogContexts } from "./contexts/AppProvider";
 
 export default function Home() {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const { selectedTags, setSelectedTags } = useContext(BlogContexts);
 
   const toggleTag = (tag: string) => {
-    setSelectedTags((prev) =>
+    setSelectedTags((prev: string[]) =>
       prev.includes(tag)
         ? prev.filter((t) => t !== tag)
         : [...prev, tag]
