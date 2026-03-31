@@ -1,11 +1,21 @@
-export default function FilterSidebar({
-  selectedTags,
-  toggleTag,
-}: {
-  selectedTags: string[];
-  toggleTag: (tag: string) => void;
-}) {
-  const allTags = ["react", "javascript", "frontend", "css"];
+"use client"
+
+import { BlogContexts } from "@/app/contexts/AppProvider";
+import { useContext } from "react";
+
+const allTags = ["react", "javascript", "frontend", "css"];
+
+export default function FilterSidebar() {
+
+  const { selectedTags, setSelectedTags } = useContext(BlogContexts);
+  
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prev: string[]) =>
+      prev.includes(tag)
+        ? prev.filter((t) => t !== tag)
+        : [...prev, tag]
+    );
+  };
 
   return (
     <div className="bg-white rounded-xl p-4 shadow-sm sticky top-16">

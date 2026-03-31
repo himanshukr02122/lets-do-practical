@@ -1,13 +1,16 @@
+"use client"
+
 import { blogs } from "@/app/data/dummyBlogs";
 import { Blog } from "@/app/types/blog";
 import BlogCard from "./BlogCard";
 import AdCard from "./ads/AdCard";
+import { BlogContexts } from "@/app/contexts/AppProvider";
+import { useContext } from "react";
 
-export default function BlogFeed({
-  selectedTags,
-}: {
-  selectedTags: string[];
-}) {
+export default function BlogFeed() {
+
+  const { selectedTags } = useContext(BlogContexts);
+
   const filteredBlogs =
     selectedTags.length === 0
       ? blogs

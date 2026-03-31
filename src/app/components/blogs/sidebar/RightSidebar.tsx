@@ -1,6 +1,12 @@
 import AdCard from "../ads/AdCard";
 
-const RightSidebar = () => {
+const RightSidebar = async () => {
+
+  
+  // const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+  // const todoLists = await response.json()
+
+  // console.log(todoLists, "todoLists---");
   
   return (
     <div className="space-y-4 sticky top-16">
