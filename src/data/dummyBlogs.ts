@@ -1,4 +1,4 @@
-import { Blog } from "../types/blog";
+import { Blog } from "../app/types/blog";
 
 const tagPool = ["react", "javascript", "frontend", "css", "nextjs"];
 

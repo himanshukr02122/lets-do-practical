@@ -1,6 +1,6 @@
 "use client"
 
-import { BlogContexts } from "@/app/contexts/AppProvider";
+import { BlogContexts } from "@/contexts/AppProvider";
 import { useContext } from "react";
 
 const allTags = ["react", "javascript", "frontend", "css"];
