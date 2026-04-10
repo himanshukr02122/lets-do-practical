@@ -18,7 +18,7 @@ export default function FilterSidebar() {
   };
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm sticky top-24">
+    <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-sm sticky top-22">
       <h2 className="font-semibold mb-3">Filters</h2>
 
       <div className="mb-4">
@@ -36,7 +36,7 @@ export default function FilterSidebar() {
                   ${
                     isActive
                       ? "bg-blue-600 text-white border-blue-600"
-                      : "bg-gray-100 text-gray-700"
+                      : "bg-gray-100 dark:bg-gray-500 text-gray-700 dark:text-gray-100"
                   }`}
               >
                 #{tag}
@@ -48,7 +48,7 @@ export default function FilterSidebar() {
 
       <div>
         <p className="text-sm font-medium mb-2">Stats</p>
-        <ul className="text-xs text-gray-600 space-y-1">
+        <ul className="text-xs text-gray-600 dark:text-gray-50 space-y-1">
           <li>Blogs read: 12</li>
           <li>Saved blogs: 5</li>
           <li>Top rated: 8</li>

@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppProvider from "../contexts/AppProvider";
 import Header from "@/components/layout/Header";
+import { Providers } from "./providers";
+import ThemeToggle from "@/components/ui/ThemeMode";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,16 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body>
-        <Header />
-        <main
-          className="mt-20"
-        >
-          <AppProvider>
-            {children}
-          </AppProvider>
-        </main>
+        <Providers>
+          <Header />
+          <main
+            className="mt-18 bg-white dark:bg-gray-900"
+          >
+            <AppProvider>
+              {children}
+            </AppProvider>
+            <div      
+              className="fixed bottom-8 right-8 z-10"
+            >
+              <ThemeToggle />
+            </div>
+          </main>
+        </Providers>
       </body>
     </html>
   );
