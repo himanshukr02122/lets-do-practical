@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <nav
-      className="p-4 fixed top-0 bg-white w-full z-9 shadow"
+      className="p-4 fixed top-0 bg-white w-full z-9 shadow lg:px-12"
     >
         <div
           className="flex justify-between"
@@ -31,7 +31,10 @@ const Header = () => {
               Blogs
             </Link>
           </div>
-          <Button onClick={() => alert("Clicked!")}>
+          <Button 
+            variant="secondary"
+            onClick={() => alert("Clicked!")}
+          >
             Login
           </Button>
         </div>
