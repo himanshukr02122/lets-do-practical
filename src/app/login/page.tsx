@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Login = () => {
@@ -18,8 +19,8 @@ const Login = () => {
   };
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-4 h-screen-minus-header flex items-center justify-center">
-      <div className="w-full max-w-md border border-gray-300 rounded-xl p-6">
+    <section className="flex items-center justify-center h-screen-minus-header bg-gray-100 dark:bg-gray-900">
+      <div className="w-full max-w-md bg-white dark:bg-gray-800 shadow-md rounded-xl p-6">
         
         <h2 className="text-2xl font-semibold text-center mb-6">
           Login
@@ -33,7 +34,7 @@ const Login = () => {
             placeholder="Email"
             value={form.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
 
@@ -43,7 +44,7 @@ const Login = () => {
             placeholder="Password"
             value={form.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
 
@@ -56,7 +57,7 @@ const Login = () => {
         </form>
 
         <p className="text-sm text-center mt-4 text-gray-600 dark:text-gray-400">
-          Don’t have an account? <span className="text-blue-500 cursor-pointer">Sign up</span>
+          Don’t have an account? <Link className="underline text-blue-600 dark:text-blue-50" href="/sign-up">Sign up</Link>
         </p>
       </div>
     </section>

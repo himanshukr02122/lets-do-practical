@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <nav
-      className="p-4 fixed top-0 w-full z-12 bg-white dark:bg-gray-900 border-b lg:px-12"
+      className="p-4 fixed top-0 w-full z-12 bg-gray-100 dark:bg-gray-900 border-b lg:px-12"
     >
         <div
           className="flex justify-between"
@@ -31,9 +31,9 @@ const Header = () => {
               Blogs
             </Link>
           </div>
-          <Link href="/login">
+          {!["/login", "/sign-up"].includes(pathname) && (<Link href="/login">
             <Button variant="secondary">Login</Button>
-          </Link>
+          </Link>)}
         </div>
     </nav>
   )

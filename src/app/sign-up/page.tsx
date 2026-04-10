@@ -1,3 +1,6 @@
+"use client"
+
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Signup = () => {
@@ -11,13 +14,13 @@ const Signup = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React. SubmitEvent) => {
     e.preventDefault();
     console.log("Signup Data:", form);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+    <div className="flex items-center justify-center h-screen-minus-header bg-gray-100 dark:bg-gray-900">
       <div className="w-full max-w-md bg-white dark:bg-gray-800 shadow-md rounded-xl p-6">
 
         <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800 dark:text-white">
@@ -65,7 +68,7 @@ const Signup = () => {
         </form>
 
         <p className="text-sm text-center mt-4 text-gray-600 dark:text-gray-400">
-          Already have an account? <span className="text-blue-500 cursor-pointer">Login</span>
+          Already have an account? <Link className="underline text-blue-600 dark:text-blue-50" href="/login">Login</Link>
         </p>
       </div>
     </div>
