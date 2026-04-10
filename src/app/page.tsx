@@ -1,9 +1,14 @@
-import BlogFeed from "./components/blogs/BlogFeed";
-import FilterSidebar from "./components/blogs/filters/FilterSidebar";
-import RightSidebar from "./components/blogs/sidebar/RightSidebar";
+import BlogFeed from "@/components/blogs/BlogFeed";
+import FilterSidebar from "@/components/blogs/filters/FilterSidebar";
+import RightSidebar from "@/components/blogs/sidebar/RightSidebar";
 
 export default function Home() {
 
+  const arr = ["red", "black", "green"]
+  console.log(arr);
+  
+  
+  
   return (
     <section
       className="w-full max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-4"

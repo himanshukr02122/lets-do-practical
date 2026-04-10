@@ -9,9 +9,7 @@ const RightSidebar = async () => {
   // console.log(todoLists, "todoLists---");
   
   return (
-    <div className="space-y-4 sticky top-16">
-      <AdCard type="square" />
-
+    <div className="space-y-4 sticky top-24">
       <div className="bg-white p-4 rounded-xl shadow-sm">
         <h3 className="font-semibold mb-2">Trending</h3>
         <ul className="text-sm space-y-1">

@@ -18,7 +18,7 @@ export default function FilterSidebar() {
   };
 
   return (
-    <div className="bg-white rounded-xl p-4 shadow-sm sticky top-16">
+    <div className="bg-white rounded-xl p-4 shadow-sm sticky top-24">
       <h2 className="font-semibold mb-3">Filters</h2>
 
       <div className="mb-4">
