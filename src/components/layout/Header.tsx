@@ -10,10 +10,10 @@ const Header = () => {
 
   return (
     <nav
-      className="p-4 fixed top-0 w-full z-12 bg-gray-100 dark:bg-gray-900 border-b lg:px-12"
+      className="p-4 h-18 flex justify-between fixed top-0 w-full z-12 bg-gray-100 dark:bg-gray-900 border-b lg:px-12"
     >
         <div
-          className="flex justify-between"
+          className="flex justify-between w-full"
         >
           <div
             className="flex gap-2.5 items-center"
